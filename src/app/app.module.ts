@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DatosEncuestaComponent } from './datos-encuesta/datos-encuesta.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
+import { EstadisticaGraficaComponent } from './estadistica-grafica/estadistica-grafica.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     DatosEncuestaComponent,
-    PreguntasComponent
+    PreguntasComponent,
+    EstadisticaGraficaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

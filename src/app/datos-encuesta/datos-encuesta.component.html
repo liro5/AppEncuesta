@@ -9,16 +9,18 @@
                     <label for="nombre">
                         <h5>Nombre</h5>
                     </label>
-                    <input type="text" id="nombre">
+                    <input type="text" id="nombre" [(ngModel)]="persona.nombre">
                     <label for="apellido">
                         <h5>Apellido</h5>
                     </label>
-                    <input type="text" id="apellido">
+                    <input type="text" id="apellido"[(ngModel)]="persona.apellido">
                 </div>
                 <div class="card-action">
                     <button class="btn waves-effect waves-light" name="action">Iniciar
                         <i class="material-icons right">send</i>
                     </button>
+                    {{persona.nombre }}
+                    {{persona.apellido }}
                 </div>
             </div>
         </div>

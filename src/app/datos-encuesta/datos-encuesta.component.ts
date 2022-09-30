@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Persona } from '../models/persona';
 
 @Component({
   selector: 'app-datos-encuesta',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datos-encuesta.component.css']
 })
 export class DatosEncuestaComponent implements OnInit {
-
+persona:Persona = new Persona();
   constructor() { }
 
   ngOnInit(): void {
