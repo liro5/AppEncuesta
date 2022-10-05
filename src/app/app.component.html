@@ -1,5 +1,22 @@
 <div class="container">
-<app-datos-encuesta></app-datos-encuesta>
-<!-- <app-preguntas></app-preguntas> -->
-<!-- <app-estadistica-grafica></app-estadistica-grafica> -->
+
+    <span [ngSwitch]="valor">
+    <p *ngSwitchCase="0">
+        <app-datos-encuesta></app-datos-encuesta>
+    </p>
+    <p *ngSwitchCase="1">
+        <app-preguntas></app-preguntas>
+    </p>
+    <p *ngSwitchCase="2">
+        <app-estadistica-grafica></app-estadistica-grafica>
+    </p>
+    </span>
+    <button  class="waves-effect waves-light btn"  (click)="siguiente()">
+    Siguiente
+    </button>
+    <br>
+    <br>
+    <button  class="waves-effect waves-light btn" (click)="atras()">
+       Atras
+        </button>
 </div>

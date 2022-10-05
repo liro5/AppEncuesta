@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AppEncuenta';
+
+  valor: number = 0;
+  siguiente() {
+    this.valor = this.valor + 1;
+    if (this.valor == 3) {
+      this.valor = 0;
+    }
+  }
+  atras() {
+    this.valor = this.valor - 1;
+    if (this.valor == -1) {
+      this.valor = 0;
+    }
+  }
+
+
+
 }
