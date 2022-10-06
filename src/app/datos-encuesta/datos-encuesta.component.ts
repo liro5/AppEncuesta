@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { outputAst } from '@angular/compiler';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Persona } from '../models/persona';
 
 @Component({
@@ -8,9 +9,14 @@ import { Persona } from '../models/persona';
 })
 export class DatosEncuestaComponent implements OnInit {
 persona:Persona = new Persona();
-  constructor() { }
+  
+@Output() IniciarEncuesta = new EventEmitter<Persona>()
+constructor() { }
 
   ngOnInit(): void {
+  }
+  iniciar(){
+    this.IniciarEncuesta.emit(this.persona)
   }
 
 }

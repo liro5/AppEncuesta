@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Persona } from './models/persona';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+persona: Persona = new Persona();
+
   valor: number = 0;
-  siguiente() {
+  siguiente(persona:Persona) {
+    this.persona = persona;
     this.valor = this.valor + 1;
     if (this.valor == 3) {
       this.valor = 0;
