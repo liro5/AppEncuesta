@@ -7,14 +7,7 @@ import { Persona } from '../models/persona';
   styleUrls: ['./preguntas.component.css']
 })
 export class PreguntasComponent implements OnInit {
-
-<<<<<<< HEAD
-@Input() persona:Persona = new Persona();
-=======
 @Input() persona: Persona = new Persona();
-
-
->>>>>>> c466d6c669f99d9821e592081f1ceee432c1e979
   constructor() { }
 
   ngOnInit(): void {

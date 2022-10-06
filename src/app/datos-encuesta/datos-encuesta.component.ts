@@ -14,10 +14,7 @@ persona:Persona = new Persona();
 
   ngOnInit(): void {
   }
-  iniciar(){
-    this.IniciarEncuesta.emit(this.persona)
-  }
-
+ 
 iniciar(){
   this.iniciarEncuesta.emit(this.persona)
 }
