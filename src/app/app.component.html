@@ -1,22 +1,22 @@
 <div class="container">
 
-    <span [ngSwitch]="valor">
-    <p *ngSwitchCase="0">
-        <app-datos-encuesta></app-datos-encuesta>
-    </p>
-    <p *ngSwitchCase="1">
+    <div [ngSwitch]="valor">
+    <div *ngSwitchCase="0">
+        <app-datos-encuesta (iniciarEncuesta)="siguiente($event)" ></app-datos-encuesta>
+    </div>
+    <div *ngSwitchCase="1">
         <app-preguntas></app-preguntas>
-    </p>
-    <p *ngSwitchCase="2">
+    </div>
+    <div *ngSwitchCase="2">
         <app-estadistica-grafica></app-estadistica-grafica>
-    </p>
-    </span>
-    <button  class="waves-effect waves-light btn"  (click)="siguiente()">
+    </div>
+    </div>
+    <!-- <button  class="waves-effect waves-light btn"  (click)="siguiente()">
     Siguiente
     </button>
     <br>
     <br>
     <button  class="waves-effect waves-light btn" (click)="atras()">
        Atras
-        </button>
+        </button> -->
 </div>
