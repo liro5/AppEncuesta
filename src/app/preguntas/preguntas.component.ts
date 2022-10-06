@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Persona } from '../models/persona';
 
 @Component({
   selector: 'app-preguntas',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./preguntas.component.css']
 })
 export class PreguntasComponent implements OnInit {
+
+@Input() persona: Persona = new Persona();
+
 
   constructor() { }
 
