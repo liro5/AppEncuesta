@@ -2,3 +2,11 @@
 color: rgb(216, 234, 19);
 
 }
+
+.btn-con{
+    cursor: pointer;
+    border-radius: 50%;
+}
+.btn-con:hover {
+    background: #26a69a !important;
+}
