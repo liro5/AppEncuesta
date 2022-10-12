@@ -3,19 +3,20 @@
         <div class="card blue-grey darken-1">
             <div class="card-content white-text">
                 <span class="card-title">
-
                     <h5>Bienvenda {{persona.nombre + ' ' + persona.apellido }}</h5>
 
                 </span>
-
-                <h5>1.¿ El vendedor que te atendió, esta bien informado sobre el producto? </h5>
+                <h5>{{pregunta.pregunta}}</h5>
+                
                 <div class="card-action">
-                    <i class="large material-icons color-cara">sentiment_very_dissatisfied</i>
-                    <i class="large material-icons color-cara">sentiment_dissatisfied</i>
-                    <i class="large material-icons color-cara">sentiment_neutral</i>
-                    <i class="large material-icons color-cara">sentiment_satisfied</i>
-                    <i class="large material-icons color-cara">sentiment_very_satisfied</i>
+                    <i (click)="valorar(1)" class="btn-con large material-icons color-cara">sentiment_very_dissatisfied</i>
+                    <i (click)="valorar(2)" class="btn-con large material-icons color-cara">sentiment_dissatisfied</i>
+                    <i (click)="valorar(3)" class="btn-con large material-icons color-cara">sentiment_neutral</i>
+                    <i (click)="valorar(4)" class="btn-con large material-icons color-cara">sentiment_satisfied</i>
+                    <i (click)="valorar(5)" class="btn-con large material-icons color-cara">sentiment_very_satisfied</i>
                 </div>
+
+              
             </div>
         </div>
     </div>
