@@ -24,6 +24,9 @@ persona: Persona = new Persona();
       this.valor = 0;
     }
   }
+  darPregunta()
+
+  
 
 
 
