@@ -43,6 +43,8 @@ ngOnInit(): void {
     let index = this.preguntas.findIndex(e => e.solucionada == false)
     if (index != -1) {
       this.pregunta = this.preguntas[index];      
+    } else{
+      this.valor = 2;
     }
   }
 

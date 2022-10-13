@@ -15,12 +15,8 @@ public preguntas: Array<Pregunta>;
     ]
   }
   public darPreguntas():Promise<Pregunta[]> {
-
     return new Promise<Pregunta[]>((resolve,reject)=>{
-
-       resolve(this.preguntas);    
-
+       resolve(this.preguntas);   
     })  
-
   };
 }

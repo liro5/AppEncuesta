@@ -8,7 +8,7 @@
         <app-preguntas (valorarRespuesta)="valorarPregunta($event)" [persona]="persona" [pregunta]="pregunta"></app-preguntas>
     </div>
     <div *ngSwitchCase="2">
-        <app-estadistica-grafica></app-estadistica-grafica>
+        <app-estadistica-grafica [persona]="persona" [preguntas]="preguntas"></app-estadistica-grafica>
     </div>
     </div>
     <!-- <button  class="waves-effect waves-light btn"  (click)="siguiente()">
@@ -19,5 +19,5 @@
     <button  class="waves-effect waves-light btn" (click)="atras()">
        Atras
         </button> -->
-     {{preguntas   | json}}
+     
 </div>
