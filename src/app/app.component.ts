@@ -38,10 +38,7 @@ ngOnInit(): void {
       this.valor = 0;
     }
   }
-  darPregunta()
-
   
-
   darPregunta(){
     let index = this.preguntas.findIndex(e => e.solucionada == false)
     if (index != -1) {
