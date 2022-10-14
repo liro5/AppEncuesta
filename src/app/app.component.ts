@@ -20,7 +20,7 @@ valor: number = 0;
 constructor(private preguntaService: PreguntaService){}
 
 ngOnInit(): void {   
-  this.preguntaService.darPreguntas().then(j => this.preguntas = j);
+  this.preguntaService.darPreguntas().then(j => this.preguntas = j );
 }
 
   siguiente(persona: Persona) {

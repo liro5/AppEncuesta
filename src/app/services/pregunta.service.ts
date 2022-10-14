@@ -1,22 +1,19 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
 import { Pregunta } from '../models/pregunta';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PreguntaService {
-public preguntas: Array<Pregunta>;
-  constructor() { 
-    this.preguntas=[
-      new Pregunta("1.¿ El vendedor que te atendió, esta bien informado sobre el producto?", 0, false),
-      new Pregunta("2.¿ El vendedor que te atendió, esta bien informado sobre el producto?", 0, false),
-      new Pregunta("3.¿ El vendedor que te atendió, esta bien informado sobre el producto?", 0, false),
-      new Pregunta("4.¿ El vendedor que te atendió, esta bien informado sobre el producto?", 0, false)
-    ]
-  }
+public preguntas: Array<Pregunta> = new Array<Pregunta>();
+  constructor(private httpRest: HttpClient) {    }
+
   public darPreguntas():Promise<Pregunta[]> {
     return new Promise<Pregunta[]>((resolve,reject)=>{
-       resolve(this.preguntas);   
+       this.httpRest.get<Array<Pregunta>>("http://localhost:8081/darPreguntas")
+       .subscribe(preguntas => {this.preguntas = preguntas;resolve(this.preguntas ); });
+      
     })  
   };
 }
