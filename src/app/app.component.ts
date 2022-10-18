@@ -1,5 +1,6 @@
 import { PrefixNot } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Encuesta } from './models/Encuesta';
 import { Persona } from './models/persona';
 import { Pregunta } from './models/pregunta';
 import { PreguntaService } from './services/pregunta.service';
@@ -14,13 +15,16 @@ export class AppComponent implements OnInit {
 persona: Persona = new Persona();
 public preguntas: Array<Pregunta> = new Array<Pregunta>;
 pregunta: Pregunta = new Pregunta();
-
+public encuestaR: Encuesta = new Encuesta();
 valor: number = 0;
 
 constructor(private preguntaService: PreguntaService){}
 
 ngOnInit(): void {   
   this.preguntaService.darPreguntas().then(j => this.preguntas = j );
+  if (this.preguntas.length == 0) {
+    console.error("Servidor no responde")
+  }
 }
 
   siguiente(persona: Persona) {
@@ -41,10 +45,15 @@ ngOnInit(): void {
   
   darPregunta(){
     let index = this.preguntas.findIndex(e => e.solucionada == false)
+    console.log(index);
     if (index != -1) {
       this.pregunta = this.preguntas[index];      
     } else{
-      this.valor = 2;
+      if (this.valor != 0)
+      {
+        this.valor = 2;             
+        this.finalizarEncuesta();        
+      }
     }
   }
 
@@ -54,6 +63,11 @@ ngOnInit(): void {
     this.darPregunta();
   }
 
+  finalizarEncuesta(){
+    this.encuestaR.Preguntas = this.preguntas;
+    this.encuestaR.persona = this.persona.nombre + " " + this.persona.apellido; 
+     this.preguntaService.AgregarEncuesta(this.encuestaR).then(e=>e);
+  }
 
 
 }

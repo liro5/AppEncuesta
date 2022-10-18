@@ -1,5 +1,7 @@
 var express = require("express"); 
 var fs = require("fs");
+const bodyParser = require('body-parser');
+var jsonParser = bodyParser.json();
 var app = express();
 
 app.use(function(req,res,next){
@@ -16,6 +18,23 @@ app.get("/darPreguntas", function(rep,res){
        res.end(data);
    } );
 });
+
+
+app.post("/agregarEncuesta", jsonParser,function (req, res) {
+    console.log("error");
+    fs.readFile(__dirname + "/" + "encuesta.json", 'utf-8', function (err, data) {
+       console.log(data);
+       data = JSON.parse(data);
+       const fechaH = new Date();
+       let Id = fechaH.getTime().toString() + Math.floor(Math.random() * 150).toString();
+       let IdK = btoa(Id);
+       data[IdK] = req.body;
+       res.end(JSON.stringify(data));
+       fs.writeFile(__dirname + "/" + "encuesta.json", JSON.stringify(data), 'utf8', function (err) {
+          if (err) return console.log(err);
+       });
+    });
+ })
 
 
 
